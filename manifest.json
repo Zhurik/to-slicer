@@ -4,6 +4,11 @@
     "name": "Github to slicer",
     "version": "0.0.1",
     "homepage_url": "https://github.com/Zhurik/to-slicer",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "2c82a21a-2db8-4b0c-9ae5-c9f39fc13521"
+        }
+    },
     "icons": {
         "48": "icons/to-slicer-48.png",
         "128": "icons/to-slicer-128.png"
