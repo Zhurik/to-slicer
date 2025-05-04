@@ -10,7 +10,7 @@
         }
     },
     "action": {
-        "default_popup": "assets/popup.html"
+        "default_popup": "views/popup.html"
     },
     "icons": {
         "48": "icons/to-slicer-48.png",
