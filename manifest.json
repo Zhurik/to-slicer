@@ -9,6 +9,9 @@
             "id": "{2c82a21a-2db8-4b0c-9ae5-c9f39fc13521}"
         }
     },
+    "action": {
+        "default_popup": "assets/popup.html"
+    },
     "icons": {
         "48": "icons/to-slicer-48.png",
         "128": "icons/to-slicer-128.png"
