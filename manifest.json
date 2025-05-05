@@ -2,21 +2,24 @@
     "description": "Adds an ability to send 3D models from Github directly to slicer",
     "manifest_version": 3,
     "name": "Github to slicer",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "homepage_url": "https://github.com/Zhurik/to-slicer",
     "browser_specific_settings": {
         "gecko": {
             "id": "{2c82a21a-2db8-4b0c-9ae5-c9f39fc13521}"
         }
     },
+    "action": {
+        "default_popup": "src/popup.html"
+    },
     "icons": {
         "48": "icons/to-slicer-48.png",
         "128": "icons/to-slicer-128.png"
     },
     "background": {
-        "service_worker": "scripts/background.js",
+        "service_worker": "src/background.js",
         "scripts": [
-            "scripts/background.js"
+            "src/background.js"
         ]
     },
     "host_permissions": [
@@ -24,6 +27,7 @@
     ],
     "permissions": [
         "scripting",
-        "activeTab"
+        "activeTab",
+        "storage"
     ]
 }
