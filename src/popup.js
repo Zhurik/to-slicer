@@ -5,10 +5,11 @@ const SLICERS = [
   "bambu",
 ];
 
-async function pinListeners() {
+async function initListeners() {
   for (const slicer of SLICERS) {
     document.getElementById(slicer).addEventListener("change", async (event) => {
       await chrome.storage.local.set({ [slicer]: event.target.checked });
+      document.getElementById("warning").style.display = "block";
     });
   }
 }
@@ -24,5 +25,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById(key).checked = value;
   }
 
-  await pinListeners();
+  await initListeners();
 });

@@ -10,6 +10,12 @@ body {
   background-color: #ECECEC;
 }
 
+img {
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
 /* The switch - the box around the slider */
 .switch {
   margin-left: auto;
@@ -88,5 +94,11 @@ input:checked+.slider:before {
 .container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;;
+  margin-bottom: 5px;
+}
+
+.warning {
+  display: none;
+  margin-top: 10px;
+  font-weight: 500;
 }
