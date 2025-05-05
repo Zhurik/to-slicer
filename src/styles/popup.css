@@ -3,11 +3,30 @@
   src: url("../assets/SpaceGrotesk-VariableFont.ttf") format("truetype");
 }
 
+:root {
+  --bg-color: #ECECEC;
+  --font-color: #202124;
+  --checkbox: #FFFFFF;
+  --checkbox-active: #4CAF50;
+  --checkbox-inactive: #CCCCCC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1E1E1E;
+    --font-color: #E0E0E0;
+    --checkbox: #2C2C2C;
+    --checkbox-active: #81C784;
+    --checkbox-inactive: #666666;
+  }
+}
+
+
 body {
   font-family: "Space Grotesk";
-  color: #202124;
+  color: var(--font-color);
   width: 200px;
-  background-color: #ECECEC;
+  background-color: var(--bg-color);
 }
 
 img {
@@ -39,7 +58,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--checkbox-inactive);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -51,17 +70,17 @@ img {
   width: 13px;
   left: 2px;
   bottom: 2px;
-  background-color: white;
+  background-color: var(--checkbox);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked+.slider {
-  background-color: #4CAF50;
+  background-color: var(--checkbox-active);
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #4CAF50;
+  box-shadow: 0 0 1px var(--checkbox-active);
 }
 
 input:checked+.slider:before {
@@ -99,6 +118,7 @@ input:checked+.slider:before {
 
 .warning {
   display: none;
+  font-size: 17px;
   margin-top: 10px;
   font-weight: 500;
 }
