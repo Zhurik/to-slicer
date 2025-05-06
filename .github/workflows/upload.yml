@@ -13,13 +13,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Zip extension
-      run: zip -r to-slicer.${{ gthub.ref_name }}.zip icons/ src/ manifest.json
+      run: zip -r to-slicer.${{ github.ref_name }}.zip icons/ src/ manifest.json
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: to-slicer.${{ gthub.ref_name }}.zip
-        asset_name: to-slicer.${{ gthub.ref_name }}.zip
+        file: to-slicer.${{ github.ref_name }}.zip
+        asset_name: to-slicer.${{ github.ref_name }}.zip
         tag: ${{ github.ref }}
         overwrite: true
         body: "Latest Github to slicer extension version"
