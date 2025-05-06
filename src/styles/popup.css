@@ -1,124 +1,123 @@
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("../assets/SpaceGrotesk-VariableFont.ttf") format("truetype");
+	font-family: "Space Grotesk";
+	src: url("../assets/SpaceGrotesk-VariableFont.ttf") format("truetype");
 }
 
 :root {
-  --bg-color: #ECECEC;
-  --font-color: #202124;
-  --checkbox: #FFFFFF;
-  --checkbox-active: #4CAF50;
-  --checkbox-inactive: #CCCCCC;
+	--bg-color: #ececec;
+	--font-color: #202124;
+	--checkbox: #ffffff;
+	--checkbox-active: #4caf50;
+	--checkbox-inactive: #cccccc;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #1E1E1E;
-    --font-color: #E0E0E0;
-    --checkbox: #2C2C2C;
-    --checkbox-active: #81C784;
-    --checkbox-inactive: #666666;
-  }
+	:root {
+		--bg-color: #1e1e1e;
+		--font-color: #e0e0e0;
+		--checkbox: #2c2c2c;
+		--checkbox-active: #81c784;
+		--checkbox-inactive: #666666;
+	}
 }
 
-
 body {
-  font-family: "Space Grotesk";
-  color: var(--font-color);
-  width: 200px;
-  background-color: var(--bg-color);
+	font-family: "Space Grotesk", monospace;
+	color: var(--font-color);
+	width: 200px;
+	background-color: var(--bg-color);
 }
 
 img {
-  margin-right: 5px;
-  position: relative;
-  top: 2px;
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
 }
 
 /* The switch - the box around the slider */
 .switch {
-  margin-left: auto;
-  position: relative;
-  width: 30px;
-  height: 17px;
+	margin-left: auto;
+	position: relative;
+	width: 30px;
+	height: 17px;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 /* The slider */
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--checkbox-inactive);
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--checkbox-inactive);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 2px;
-  bottom: 2px;
-  background-color: var(--checkbox);
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 13px;
+	width: 13px;
+	left: 2px;
+	bottom: 2px;
+	background-color: var(--checkbox);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
-input:checked+.slider {
-  background-color: var(--checkbox-active);
+input:checked + .slider {
+	background-color: var(--checkbox-active);
 }
 
-input:focus+.slider {
-  box-shadow: 0 0 1px var(--checkbox-active);
+input:focus + .slider {
+	box-shadow: 0 0 1px var(--checkbox-active);
 }
 
-input:checked+.slider:before {
-  -webkit-transform: translateX(13px);
-  -ms-transform: translateX(13px);
-  transform: translateX(13px);
+input:checked + .slider:before {
+	-webkit-transform: translateX(13px);
+	-ms-transform: translateX(13px);
+	transform: translateX(13px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 17px;
+	border-radius: 17px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
 }
 
 .slicer {
-  font-size: 15px;
-  font-weight: 400;
-  float: left;
+	font-size: 15px;
+	font-weight: 400;
+	float: left;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
 }
 
 .warning {
-  display: none;
-  font-size: 17px;
-  margin-top: 10px;
-  font-weight: 500;
+	display: none;
+	font-size: 17px;
+	margin-top: 10px;
+	font-weight: 500;
 }
