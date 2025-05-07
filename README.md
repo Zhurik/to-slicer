@@ -4,6 +4,8 @@
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
+![Preview](./public/preview.png)
+
 Small browser extension to send 3d files to slicers directly from Github
 
 [Chrome Web Store](https://chromewebstore.google.com/detail/github-to-slicer/jomdcljbebhocheinfmkakgobbneconk)
@@ -25,3 +27,9 @@ Coming soon
 #### Firefox
 
 Coming soon
+
+## Development
+
+```bash
+pre-commit install
+```
