@@ -50,6 +50,10 @@ chrome.tabs.onUpdated.addListener(async (id, changeInfo, tab) => {
     return
   }
 
+  if (changeInfo.title !== tab.url.slice(8) && changeInfo.status !== 'complete') {
+    return
+  }
+
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     files: ['src/to_slicer.js']
