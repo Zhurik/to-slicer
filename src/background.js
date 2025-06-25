@@ -58,6 +58,11 @@ chrome.tabs.onUpdated.addListener(async (id, changeInfo, tab) => {
     target: { tabId: tab.id },
     files: ['src/to_slicer.js']
   })
+
+  await chrome.scripting.insertCSS({
+    target: { tabId: tab.id },
+    files: ["src/styles/buttons.css"],
+  });
 })
 
 chrome.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
