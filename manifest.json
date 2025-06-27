@@ -21,5 +21,5 @@
 		"scripts": ["src/background.js"]
 	},
 	"host_permissions": ["*://*.github.com/*"],
-	"permissions": ["scripting", "activeTab", "storage"]
+	"permissions": ["scripting", "activeTab", "storage", "webNavigation"]
 }

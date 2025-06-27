@@ -65,6 +65,22 @@ chrome.tabs.onUpdated.addListener(async (id, changeInfo, tab) => {
   })
 })
 
+chrome.webNavigation.onBeforeNavigate.addListener(async (details) => {
+  if (!isSlicebale(details)) {
+    return
+  }
+
+  await chrome.scripting.executeScript({
+    target: { tabId: details.tabId },
+    files: ['src/to_slicer.js']
+  })
+
+  await chrome.scripting.insertCSS({
+    target: { tabId: details.tabId },
+    files: ['src/styles/buttons.css']
+  })
+})
+
 chrome.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
   switch (reason) {
     case 'install': await populateLocalStorage()
