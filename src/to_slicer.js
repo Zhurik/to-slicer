@@ -1,6 +1,6 @@
 /* global chrome */
 
-var ID_FOR_CHECK = 'to-slicer-link'  // eslint-disable-line
+var ID_FOR_CHECK = 'to-slicer-container'  // eslint-disable-line
 
 var SLICERS = ['orca', 'prusa', 'cura', 'bambu']  // eslint-disable-line
 
