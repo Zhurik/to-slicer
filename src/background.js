@@ -30,10 +30,6 @@ function isAllowedFileType (url) {
   return false
 }
 
-function isSlicebale (tab) {
-  return isAllowedHost(tab.url) && isAllowedFileType(tab.url)
-}
-
 async function populateLocalStorage () {
   for (const slicer of SLICERS) {
     const rawValue = await chrome.storage.local.get([slicer])
@@ -46,7 +42,16 @@ async function populateLocalStorage () {
 }
 
 chrome.tabs.onUpdated.addListener(async (id, changeInfo, tab) => {
-  if (!isSlicebale(tab)) {
+  if (!isAllowedHost(tab.url)) {
+    return
+  }
+
+  if (!isAllowedFileType(tab.url)) {
+    await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ['src/deleter.js']
+    })
+
     return
   }
 
@@ -57,6 +62,36 @@ chrome.tabs.onUpdated.addListener(async (id, changeInfo, tab) => {
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     files: ['src/to_slicer.js']
+  })
+
+  await chrome.scripting.insertCSS({
+    target: { tabId: tab.id },
+    files: ['src/styles/buttons.css']
+  })
+})
+
+chrome.webNavigation.onBeforeNavigate.addListener(async (details) => {
+  if (!isAllowedHost(details.url)) {
+    return
+  }
+
+  if (!isAllowedFileType(details.url)) {
+    await chrome.scripting.executeScript({
+      target: { tabId: details.tabId },
+      files: ['src/deleter.js']
+    })
+
+    return
+  }
+
+  await chrome.scripting.executeScript({
+    target: { tabId: details.tabId },
+    files: ['src/to_slicer.js']
+  })
+
+  await chrome.scripting.insertCSS({
+    target: { tabId: details.tabId },
+    files: ['src/styles/buttons.css']
   })
 })
 

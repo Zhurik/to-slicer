@@ -2,7 +2,7 @@
 
 [![Chrome web store](./public/chrome.png)](https://chromewebstore.google.com/detail/github-to-slicer/jomdcljbebhocheinfmkakgobbneconk) [![Firefox Browser Add-ons](./public/firefox.webp)](https://addons.mozilla.org/ru/firefox/addon/github-to-slicer/)
 
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 ![Preview](./public/preview.png)
 
