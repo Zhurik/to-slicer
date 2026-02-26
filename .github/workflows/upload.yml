@@ -18,7 +18,7 @@ jobs:
     - name: Zip extension
       run: zip -r to-slicer.zip icons/ src/ manifest.json
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@81c65b7cd4de9b2570615ce3aad67a41de5b1a13 # v2
+      uses: svenstaro/upload-release-action@b98a3b12e86552593f3e4e577ca8a62aa2f3f22b # v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: to-slicer.zip
