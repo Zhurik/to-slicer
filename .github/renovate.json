@@ -3,5 +3,11 @@
   "extends": [
     "config:best-practices"
   ],
-  "assigneesFromCodeOwners": true
+  "assigneesFromCodeOwners": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
+      "automerge": true
+    }
+  ]
 }
